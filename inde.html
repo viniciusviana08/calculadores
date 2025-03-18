@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full text-center">
+        <h1 class="text-2xl font-bold mb-6">Exercícios de Fixação</h1>
+        <div class="space-y-4">
+            <a href="Exercicio 1/index.html" class="block w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                Exercício 1 - Cálculo de Horas Extras
+            </a>
+            <a href="Exercicio 2/index.html" class="block w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                Exercício 2 - Aumento de Salário
+            </a>
+            <a href="Exercicio 3/index.html" class="block w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                Exercício 3 - Transporte de Colaboradores
+            </a>
+            <a href="Exemplo 1/exemplo1.html" class="block w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                Exemplo 1 - Calculadora
+            </a>
+        </div>
+        <p id="dataHora" class="text-center text-gray-600 mt-4"></p>
+    </div>
+
+    
+    <script>
+        function atualizarDataHora() {
+            const elementoDataHora = document.getElementById('dataHora');
+            const agora = new Date(); // Cria um objeto Date com a data e hora atuais
+            const opcoes = { 
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', 
+                hour: '2-digit', minute: '2-digit', second: '2-digit' 
+            };
+            // Formata a data e hora conforme as opções
+            elementoDataHora.textContent = agora.toLocaleDateString('pt-BR', opcoes);
+        }
+
+        // Atualiza a data e hora a cada segundo
+        setInterval(atualizarDataHora, 1000);
+        atualizarDataHora(); // Chama a função imediatamente ao carregar a página
+    </script>
+</body>
+</html>
